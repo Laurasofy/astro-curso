@@ -1,0 +1,70 @@
+---
+import MenuItemContainerView from "../components/MenuItemContainerView.astro";
+import menuItems from "../data/menuItemData.ts";
+import MenuItemView from "../components/MenuItemView.astro";
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <nav>
+    <MenuItemContainerView>
+      {menuItems.map((item) => (
+        <MenuItemView {...item} />
+      ))}
+    </MenuItemContainerView>
+  </nav>
+
+  <main>
+    <slot />
+  </main>
+</body>
+</html>
+
+<style is:global>
+  html {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+  }
+  .header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #00A152, #006837);
+    color: white;
+    text size: 20px;
+    z-index: 2000;
+    top:0;
+    left:0;
+  }
+  
+
+  body {
+    margin: 0;
+    width: 100%;
+    background-color: #E0E0E0;
+    color: #FFFFFF;
+    overflow-x: hidden;
+  }
+
+  nav {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+</style>

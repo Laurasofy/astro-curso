@@ -1,0 +1,58 @@
+---
+title: "Sección Innovadora"
+---
+
+<div class="innovative-section">
+  <div class="content">
+    <h2>Crecimiento</h2>
+    <p>Nuestra compañía lleva 25 años de experiencia en el sector energético y ambiental del país y los sectores de mayor impacto.</p>
+  </div>
+  <div class="content">
+    <h2>Estrategia</h2>
+    <p>La metodología de la compañía se basa en realizar para cada proyecto estudios de predictibilidad y patrones ecológicos.</p>
+  </div>
+  <div class="content">
+    <h2>Misión</h2>
+    <p>Nuestra misión es contribuir al desarrollo sostenible mediante soluciones innovadoras en el sector energético.</p>
+  </div>
+  <div class="content">
+    <h2>Desarrollo</h2>
+    <p>Implementamos tecnología avanzada para garantizar la eficiencia y sostenibilidad de nuestros proyectos.</p>
+  </div>
+</div>
+
+<style>
+.innovative-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 4rem 2rem;
+  color: #333;
+  justify-content: center;
+  order: 1;
+  margin-top: 240px;
+  background: url("../assets/fondo-industrial.jpg") no-repeat center center/cover;
+}
+
+.content {
+  padding: 2rem;
+  border-left: 5px solid #16a085;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.content h2 {
+  margin-bottom: 1rem;
+  color : #16a085 ;
+  font-weight: bold;
+}
+</style>
