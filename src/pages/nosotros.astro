@@ -1,0 +1,223 @@
+---
+import LayoutN from "../layouts/LayoutN.astro";
+---
+
+<LayoutN title="Nosotros">
+  <section class="sobre-nosotros">
+    <div class="texto">
+      <h1>Sobre Nosotros</h1>
+      <p>
+        En INDUSTRIAL ACHME, nos especializamos en el diseño, instalación y mantenimiento de tuberías para el transporte seguro y eficiente de combustibles líquidos y gaseosos, como queroseno y gas licuado (GLP). Con más de 25 años de experiencia, ofrecemos soluciones que cumplen con los más altos estándares de seguridad y calidad.
+      </p>
+      <p>
+        Además, somos líderes en la instalación de sistemas de energía solar fotovoltaica, una tecnología renovable que transforma directamente la radiación solar en electricidad.
+      </p>
+      <p>
+        Nos comprometemos con el saneamiento ambiental antes y después de cada proyecto, midiendo el impacto social y gestionando los recursos hídricos para minimizar daños ambientales. Cumplimos con la normativa estatal para garantizar resultados sostenibles que protejan el entorno.
+      </p>
+      <p>
+        Nuestra misión es desarrollar soluciones innovadoras y sostenibles que impulsen infraestructuras energéticas y de transporte más eficientes, mientras cuidamos del medio ambiente y promovemos el progreso industrial responsable.
+      </p>
+    </div>
+    <div class="imagen">
+      <img src="/assets/pipeline.jpg" alt="Sobre Nosotros">
+    </div>
+  </section>
+
+  <section class="equipo">
+    <h2>Nuestro Equipo</h2>
+    <div class="miembros">
+      <div class="miembro">
+        <img src="/assets/JuanPablo.png" alt="Juan Pablo Gómez">
+        <h3>Juan Pablo Gómez</h3>
+        <p>Gerente General</p>
+      </div>
+      <div class="miembro">
+        <img src="/assets/Eduardo.png" alt="Eduardo Gómez">
+        <h3>Eduardo Gómez</h3>
+        <p>Especialista en Atención al Cliente</p>
+      </div>
+      <div class="miembro">
+        <img src="/assets/Santiago.png" alt="Santiago Ramírez">
+        <h3>Santiago Ramírez</h3>
+        <p>Director de Ventas</p>
+      </div>
+      <div class="miembro">
+        <img src="/assets/Orlando.png" alt="Orlando López">
+        <h3>Orlando López</h3>
+        <p>Director de Recursos Humanos</p>
+      </div>
+    </div>
+  </section>
+</LayoutN>
+
+<style>
+/* Sección SOBRE NOSOTROS */
+.sobre-nosotros {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  padding: 60px 40px;
+  max-width: 1600px;
+  margin: auto;
+  gap: 40px;
+  
+}
+
+.sobre-nosotros .texto {
+  flex: 1.5;
+  padding-right: 40px;
+  max-width: 900px;
+}
+
+.sobre-nosotros p {
+  font-size: 30px;
+  line-height: 1.8;
+  text-align: justify;
+  color: rgb(0, 0, 0);
+}
+
+.sobre-nosotros h1 {
+  font-size: 90px;
+  font-weight: bold;
+  color: #00A152;
+  margin-bottom: 20px;
+}
+
+/* Alineación del logo */
+/* Posicionamiento mejorado de la imagen */
+.sobre-nosotros .imagen {
+  flex: 1; /* La imagen también ocupa el espacio necesario */
+  display: flex;
+  justify-content: flex-end; /* La mueve a la derecha */
+  margin-left: 30px; /* Da espacio al texto */
+  width: 700px; 
+  height: 400px; 
+}
+
+.sobre-nosotros .imagen img {
+   max-width: 500px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.sobre-nosotros .contenido {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Mejora en el responsive */
+@media (max-width: 768px) {
+  .sobre-nosotros {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .sobre-nosotros .texto {
+    padding-right: 0;
+    max-width: 100%;
+  }
+
+  .sobre-nosotros p {
+    font-size: 22px;
+  }
+
+  .sobre-nosotros h1 {
+    font-size: 60px;
+  }
+
+  .sobre-nosotros .imagen {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .sobre-nosotros .imagen img {
+    max-width: 450px; /* Aumenta el tamaño del logo */
+  height: auto;
+  border-radius: 10px;
+  }
+}
+
+/* SECCIÓN EQUIPO */
+.equipo {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el título horizontalmente */
+}
+
+.equipo h2 {
+  font-size: 60px;
+  color: #00A152;
+  margin-bottom: 30px;
+  font-weight: bold;
+  
+}
+
+/* Diseño del equipo con imágenes más grandes y centrado */
+.miembros {
+  display: grid;
+  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-content: end; /* Distribución automática */
+  gap: 110px; /* Espaciado entre miembros */
+  max-width: 100%;
+  padding: 0 50px;
+}
+
+
+.miembro {
+  text-align: center;
+  width: 300px;
+}
+
+.miembro img {
+  width: 120%;
+  height: 300px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.miembro h3 {
+  font-size: 26px;
+  color: #00A152;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.miembro p {
+  font-size: 22px;
+  color: #333;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+  .sobre-nosotros .imagen img {
+    max-width: 200px; /* También se agranda en móviles */
+  }
+}
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .equipo {
+    margin-top: 200px;
+  }
+
+  .miembros {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .miembro {
+    width: 90%;
+  }
+
+  .miembro img {
+    height: 350px;
+  }
+}
+</style>

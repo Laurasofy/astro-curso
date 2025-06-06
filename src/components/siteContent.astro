@@ -1,0 +1,152 @@
+---
+// Importamos el tipo de dato y el componente de las tarjetas
+import type { CardItem } from "../types/types.ts";
+import CardsView from "./CardsView.tsx";
+
+// Definimos las tarjetas con su contenido
+const cards: CardItem[] = [
+    {
+        title: "Soluciones Personalizadas",
+        image: "/assets/tuberias.jpg",
+        description: "Entendemos que cada negocio es unico y tiene necesidades especificas.Es por eso que nos enorgullece ofrecete soluciones personalizadas diseñadas especialmente para satisfacer las popularidades para tu concesion o empresa en cuanto a proyectos de instalacion de energia fotovoltaica en tuneles y vias 4g",
+    },
+    {
+        title: "Asesoria Profesional ",
+        image: "/assets/panelS.jpg",
+        description: "Nuestra compania se especializa en realizar instalaciones de energia fotovoltaica en puertos, aerodromos, vias 4g y tuneles de alto impacto, tambien en plataformas petroleras y grandes superficies como instituciones educativas, acuaparques. Las instalaciones se realizan desde el movimiento de suelos hasta la terminacion e instalacion de paneles solares, inversores, transformadores, baterias y la red que promueve la extension o superficie de energia limpia, basada en la operacion foltovoltaica y eolica dependiendo el proyecto",
+    },
+    {
+        title: "Optimizacion de procesos",
+        image: "/assets/planta.jpg",
+        description: "Nuestros equipos de expertos en optimizacion de procesos emplean enfoques avanzados y tecnicas innovadoras para analizar tus procesos empresariales actuales.Evaluamos cada etapa del flujo de trabajo, desde el inicio donde es de gran importancia el saneamiento ambiental y evitar daños ecologicos en bosques y recursos hidricos",
+    }
+];
+---
+
+
+<!-- SECCIÓN SOBRE NOSOTROS -->
+<section class="sobreNosotros">
+    <div class="overlay">
+        <h2>Sobre Nosotros</h2>
+        <p>
+            En industrial ACHME, contamos con más de 25 años de experiencia ofreciendo soluciones industriales de alta calidad, especializándonos en el transporte seguro de gas licuado por tuberías, servicios de saneamiento ambiental y la instalación de sistemas de energía solar.
+            Nuestro compromiso con la innovación y la sostenibilidad nos permite brindar servicios confiables y eficientes que ayudana nuestro clientes a optimizar su consumo energético y a cumplir con estándares ambientales rigurosos. Con una trayectoria sólida y un equipo técnico de primer nivel, en industrial ACHME trabajando para construir un futuro más limpio y seguro para todos .
+        </p>
+        
+        <button class="btn">Conocenos</button>
+    </div>
+</section>
+
+<section class="cards-section">
+    <h2 class="section-title">Nuestros Servicios</h2>
+        <p>Nos complace ofrecerte una amplia gama de servicios diseñados para impulsar las diversas concesiones y empresas en un nuevo mundo energetíco, responsabilidad de los combustibles gaseosos y el saneamiento ambiental pre y pos proyecto.</p>
+    </div>
+    <div class="cardsView">
+        <CardsView cards={cards} client:load />
+    </div>
+</section>
+
+<!-- ESTILOS -->
+<style>
+/* SECCIÓN SOBRE NOSOTROS */
+
+
+.sobreNosotros {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(to bottom, #064e3b, #0f766e); /* Degradado verde */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0; /* Mayor separación */
+    margin-top: 20px; /* Baja la sección */
+    text-align: justify;
+    line-height: 1.8;
+    order: 2;
+}
+
+/* Overlay de la sección */
+.overlay {
+    background: rgba(0, 0, 0, 0.6); 
+    color: rgb(255, 255, 255);
+    padding: 50px;
+    border-radius: 12px;
+    text-align: center;
+    width: 75%;
+}
+
+
+/* Sección de la descripción */
+.descripcion {
+    width: 70%;
+    margin: 30px auto;
+    text-align: center;
+    font-size: 1.5rem;
+    color: black;
+}
+
+/* SECCIÓN DE TARJETAS */
+.cards-section {
+    width: 80%;
+    margin: 70px auto 0; /* Baja más la sección de tarjetas */
+    text-align: center;
+    color:black
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    text-align: justify;
+    
+   
+}
+/* Título "Sobre Nosotros" */
+.sobreNosotros h2 {
+    font-size: 60px;
+    font-weight: bold;
+    color: #fff; /* Blanco para contraste */
+    
+}
+
+/* Botón */
+.btn {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    padding: 20px 24px;
+    background-color: white;
+    color: #064e3b; /* Verde oscuro para coherencia */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Efecto hover */
+.btn:hover {
+    background-color: #4caf50; /* Verde vibrante */
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Mejor espaciado en el título */
+.section-title {
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 20px; /* Más espacio debajo */
+    color: black;
+}
+
+/* Mejor ancho y alineación del subtítulo */
+.section-subtitle {
+    text-align: justify;
+    font-size: 24px;
+    color: #444;
+    margin-bottom: 50px; /* Más espacio antes de las tarjetas */
+    width: 65%; /* Más estrecho */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+</style>
+

@@ -1,0 +1,197 @@
+---
+// Importa el layout base
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Contáctanos">
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <h1>Contáctanos</h1>
+      <p>Estamos aquí para ayudarte. Ponte en contacto con nosotros por cualquier consulta.</p>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="contact-section">
+    <section class="contact-container">
+      <!-- Texto de contacto -->
+      <div class="contact-text">
+        <h2>Visítanos</h2>
+
+        <div class="info-card">
+          <i class="fas fa-clock"></i>
+          <div>
+            <h3>Horarios de atención</h3>
+            <p>Lunes a viernes de 9:00AM – 5:00PM<br />Sábados, domingos y festivos de 10:00AM – 6:00PM</p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <h3>Correo electrónico</h3>
+            <p><a href="mailto:GERENCIA@ENERGETICASACMHE.NET.CO" class="email">GERENCIA@ENERGETICASACMHE.NET.CO</a></p>
+            <a href="mailto:GERENCIA@ENERGETICASACMHE.NET.CO" class="btn">📧 Enviar correo</a>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <h3>Dirección</h3>
+            <p>Cra. 74 # 52b 56 Normandía<br />Bogotá, Colombia</p>
+            <a href="https://www.google.com/maps?q=Cra.+74+%23+52b+56,+Bogot%C3%A1" target="_blank" class="btn">📍 Abrir en Google Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mapa grande -->
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.5469804736126!2d-74.11173072636048!3d4.6745403418865905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9b71024e0303%3A0xc1cad470e60a5c92!2sCra.%2074a%20%2352B-56%2C%20Engativ%C3%A1%2C%20Bogot%C3%A1%2C%20Cundinamarca!5e0!3m2!1ses-419!2sco!4v1744218940434!5m2!1ses-419!2sco" 
+          allowfullscreen 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <!-- Estilos -->
+  <style>
+    :global(html, body) {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: #e0f2e9; /* Verde claro */
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .header {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(to right, #00A152, #006837); /* Verde oscuro degradado */
+      color: white;
+    }
+
+    .header-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .header h1 {
+      font-size: 64px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .header p {
+      font-size: 26px;
+      font-weight: 300;
+      margin-top: 15px;
+    }
+
+    .contact-section {
+      padding: 50px 20px;
+      background: linear-gradient(to bottom, #e0f2e9, #c8e6c9); /* Fondo verde claro degradado */
+    }
+
+    .contact-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .contact-text {
+      flex: 1;
+      min-width: 300px;
+      color: #000;
+      font-size: 22px;
+    }
+
+    .contact-text h2 {
+      font-size: 45px;
+      margin-bottom: 25px;
+    }
+
+    .info-card {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 25px;
+      padding: 20px;
+      border-radius: 12px;
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .info-card i {
+      font-size: 40px;
+      color: #00A152;
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+
+    .info-card h3 {
+      margin: 0;
+      font-size: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #00A152;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #007b3e;
+    }
+
+    /* MAPA AMPLIADO */
+    .map-container {
+      flex: 1;
+      min-width: 300px;
+      width: 100%;
+      margin: 160px auto;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 42px;
+      }
+
+      .header p {
+        font-size: 18px;
+      }
+
+      .contact-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .map-container iframe {
+        height: 400px;
+      }
+    }
+  </style>
+</Layout>
+

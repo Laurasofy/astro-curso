@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import CardsSection from "../components/CardsSection.astro";
+import SiteContent from "../components/siteContent.astro";
+import Clientes from "../components/Clientes.astro";
+---
+
+<Layout title="Sitio web de INDUSTRIAL ACMHE">
+    <Header />
+    <CardsSection />
+    <SiteContent />
+    <Clientes />
+</Layout>
+
+ <!-- 👇 Aquí registramos el Service Worker -->
+ <script type="module" src="/sw-register.js"></script>
+
+</Layout>

@@ -1,0 +1,101 @@
+---
+interface Cliente {
+  nombre: string;
+  imagen: string;
+}
+
+const clientes: Cliente[] = [
+  {
+    nombre: "TUNELES PRESAS E INGENIERIA",
+    imagen: "/assets/tunel.jpg",
+  },
+  {
+    nombre: "CHINA HARBOUR ENGINEERING",
+    imagen: "/assets/china.png",
+  },
+  {
+    nombre: "PSI INTEGRATED",
+    imagen: "/assets/infrastructure.jpg",
+  },
+];
+---
+
+<section class="clientes">
+  <h2 class="titulo">Algunos de Nuestros Clientes</h2>
+  <div class="clientes-grid">
+    {clientes.map((cliente) => (
+      <div class="cliente">
+        <img src={cliente.imagen} alt={cliente.nombre} />
+        <p>{cliente.nombre}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+.clientes {
+  text-align: center;
+  padding: 50px 20px;
+  color: black;
+  font-family: 'Poppins', sans-serif; 
+  background:#E0E0E0; /* Esto reemplaza cualquier otro fondo */
+}
+
+.titulo {
+  font-size: 3.8rem;
+  font-weight: bold;
+  color: #16a085;
+  letter-spacing: 1.5px;
+  font-family: 'Poppins', sans-serif; 
+}
+
+.clientes-grid {
+  display: flex;
+  justify-content: center;
+  gap: 130px; /* separacion
+  flex-wrap: nowrap; /* Evita que se vayan a otra línea */
+  overflow-x: auto; /* Permite scroll en pantallas pequeñas */
+  max-width: 100%;
+ 
+  
+}
+
+.cliente {
+  flex: 1; /* Hace que cada tarjeta tenga el mismo tamaño */
+  max-width: 500px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: 'Poppins', sans-serif; 
+ 
+}
+
+.cliente img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+
+.cliente p {
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 15px;
+  font-family: 'Poppins', sans-serif; 
+}
+
+@media (max-width: 768px) {
+  .clientes-grid {
+    overflow-x: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    scroll-snap-type: x mandatory;
+  }
+  .cliente {
+    min-width: 300px;
+    scroll-snap-align: center;
+  }
+}
+</style>

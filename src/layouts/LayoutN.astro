@@ -1,0 +1,81 @@
+---
+import MenuItemContainerView from "../components/MenuItemContainerView.astro";
+import menuItems from "../data/menuItemData.ts";
+import MenuItemView from "../components/MenuItemView.astro";
+
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  {description && <meta name="description" content={description} />}
+</head>
+<body>
+  <!-- Menú de navegación -->
+  <header>
+    <MenuItemContainerView>
+      {menuItems.map((item) => 
+        <MenuItemView {...item} />
+      )}
+    </MenuItemContainerView>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main>
+    <slot />
+  </main>
+</body>
+</html>
+
+<style is:global>
+  :root {
+    --primary-color: #0070f3;
+    --secondary-color: #ff0080;
+    --background-color: #f0f0f0;
+    --text-color: #111111;
+  }
+
+  html {
+    font-family: "Crimson Text", serif;
+    background-color: #000;
+  }
+
+  body {
+    font-family: "Crimson Text", serif;
+    background-image: url(/assets/arbol.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 0;
+    min-height: 100vh;
+    color: black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Fondo semi-transparente */
+    padding: 10px 0;
+    z-index: 1000;
+  }
+
+  main {
+    width: 80%;
+    max-width: 1600px;
+    margin: 80px auto 0; /* Agregar margen superior para no tapar contenido */
+    padding: 40px 0;
+  }
+</style>
